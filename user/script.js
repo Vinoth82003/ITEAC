@@ -51,6 +51,26 @@ if (timerValue >= 0) {
 });
 // You can add an event listener to handle page reloading
 
+// Event listener for when the page loses focus (user switches tabs)
+window.addEventListener('blur', function () {
+    // Change the title when the page loses focus (optional)
+    document.title = 'Exam in Progress - Your Answers May Be Lost';
+
+    // Delay the submission and alert by 3 seconds
+    setTimeout(submitAnswersAndShowAlert, 3000);
+});
+
+function submitAnswersAndShowAlert() {
+    if (timerValue >= 0) {
+        if (!reloadingEnabled) {
+            var reloaded = true;
+            sendDataToPHP(answers, rollno, reloaded);
+            // Display an alert message when answers are submitted
+            alert('Answers submitted. You may leave this page.');
+        }
+    }
+}
+
 
 // const percentage = 85.00;
 function percentageCalculate(testscore){
