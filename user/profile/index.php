@@ -80,7 +80,7 @@ if ($stmt) {
 </head>
 <body>
     <div class="container">
-        <a href="../logout.php">logout</a>
+        <a href="../logout.php" class="logoutBtn">logout</a>
         <div class="user_container">
             <div class="card">
                 <div class="rank">
