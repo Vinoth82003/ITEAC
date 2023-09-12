@@ -35,45 +35,20 @@ function updateTimer() {
 }
 
 window.addEventListener('beforeunload', function (e) {
-    if (timerValue >= 0 && !reloadingEnabled) {
+    
+if (timerValue >= 0) {
+    if (!reloadingEnabled) {
+
         var reloaded = true;
-        sendDataToPHP(answers, rollno, reloaded);
 
-        // Display a confirmation message
-        const confirmationMessage = 'You are about to leave this page. Do you want to submit your answers and close the exam?';
-        e.returnValue = confirmationMessage;
-
-        // Some browsers require a return value for the confirmation dialog
-        return confirmationMessage;
+        sendDataToPHP(answers, rollno,reloaded);
+        // Cancel the event to prevent the page from reloading
+        e.preventDefault();
+        // Prompt a confirmation message if you want
+        e.returnValue = 'You are about to leave this page. Are you sure?';
     }
+}
 });
-
-// Store the original title when the page loads
-const originalTitle = document.title;
-
-// Event listener for when the page loses focus (user switches tabs)
-window.addEventListener('blur', function () {
-    // Change the title when the page loses focus
-    document.title = 'Exam in Progress - Your Answers May Be Lost';
-
-    // Set a timer to submit the exam if the user doesn't return within 5 seconds
-    const submitTimer = setTimeout(function () {
-        var reloaded = true;
-        sendDataToPHP(answers, rollno, reloaded);
-        alert('The exam was automatically submitted because you did not return to the tab.');
-    }, 5000); // 5 seconds
-
-    // Event listener for when the page regains focus (user returns to the tab)
-    window.addEventListener('focus', function () {
-        // Restore the original title when the page regains focus
-        document.title = originalTitle;
-        
-        // Clear the submit timer if the user returns before it triggers
-        clearTimeout(submitTimer);
-    });
-});
-
-
 // You can add an event listener to handle page reloading
 
 

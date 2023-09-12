@@ -11,12 +11,9 @@ $percentage = floatval($data['percentage']); // Convert to a float
 $quizType = $data['quizType'];
 $rollno = $data['rollno'];
 $reloaded = $data['reloaded'];
+// $newTab = $data['newTab'];
 $timetaken = $data['timetaken'];
-if ($reloaded == 'done') {
-    $malpractice = 'reloaded the page';
-} else {
-    $malpractice = '-';
-}
+
 $score = intval($data['score']); // Convert to an integer
 
 // Add the 'reloaded' data to the database
