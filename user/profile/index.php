@@ -113,8 +113,8 @@ if ($stmt) {
             <div class="testcard">
                 <ul class="testDetails">
                     <li class="testList testName">Name : Quiz</li>
-                    <li class="testList">Persentage : <?php echo $_SESSION['quiz_percentage']; ?> </li>
                     <li class="testList">Score : <?php echo $_SESSION['quiz_score']; ?> </li>
+                    <li class="testList">Persentage : <?php echo $_SESSION['quiz_percentage']; ?> </li>
                     <li class="testList">Time Taken : <?php echo $_SESSION['quiz_timeTaken']; ?></li>
                 </ul>
             </div>
@@ -124,8 +124,8 @@ if ($stmt) {
             <div class="testcard">
                 <ul class="testDetails">
                     <li class="testList testName">Name : aptitute</li>
-                    <li class="testList">Persentage : <?php echo $_SESSION['apptitute_percentage']; ?></li>
                     <li class="testList">Score : <?php echo $_SESSION['apptitute_score']; ?></li>
+                    <li class="testList">Persentage : <?php echo $_SESSION['apptitute_percentage']; ?></li>
                     <li class="testList">Time Taken : <?php echo $_SESSION['apptitute_timeTaken']; ?></li>
                 </ul>
             </div>
@@ -135,8 +135,8 @@ if ($stmt) {
             <div class="testcard">
                 <ul class="testDetails">
                     <li class="testList testName">Name : reasoning</li>
-                    <li class="testList">Persentage : <?php echo $_SESSION['reasoning_percentage']; ?></li>
                     <li class="testList">Score : <?php echo $_SESSION['reasoning_score']; ?></li>
+                    <li class="testList">Persentage : <?php echo $_SESSION['reasoning_percentage']; ?></li>
                     <li class="testList">Time Taken : <?php echo $_SESSION['reasoning_timeTaken']; ?></li>
                 </ul>
             </div>
