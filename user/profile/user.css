@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: #eaeaea;
+    display: block;
+    background-image: url("iteac.jpeg");
+    background-size:  100%  110%;
+    background-repeat: no-repeat;
+    background-position: 5%;
+}
+
+.user_container{
+    width: 90%;
+    top: 120px;
+    position: absolute;
+}
+
+.card{
+    width: 500px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px;
+    left: 20px;
+}
+
+.rank {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: #006f46;
+    right: -75px;
+    top: -3px;
+    transform: rotate(40deg);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 10px #ceffce;
+}
+
+.left{
+    flex-basis: 40%;
+    background: #ffffff;
+}
+
+.right{
+    flex-basis: 60%;
+    background: #ffffff;
+}
+
+.innercard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #2d2d2d;
+    color: #46cc46;
+}
+
+.userDetails{
+    width: 100%;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attempts{
+    width: 100%;
+}
+
+.attemptsList{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.name{
+    padding: 10px 20px;
+    background: #e2e2e238;
+    border-radius: 5px;
+    width: 70%;
+} 
+
+.list{
+    padding: 10px 15px;
+    min-width: 70px;
+    border-radius: 3px;
+    background: #e2e2e238;
+    text-align: center;
+    cursor: pointer;
+}
+
+.profBackground{
+    width:  150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2d2d2d;
+    border-radius: 50%;
+    border: 4px solid #21f521;
+}
+
+.profLetter{
+    font-size: 50px;
+    color: #46cc46;
+    text-shadow: 2px 2px 2px #fff;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+.attemptsname{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.list{
+    transition: all .5s;
+}
+
+.list.active {
+    padding: 10px 15px;
+    min-width: 70px;
+    border-radius: 3px;
+    /* background: #e2e2e238; */
+    text-align: center;
+    cursor: pointer;
+    background: #fbfbfbfc;
+    color: #2d2d2d;
+}
+
+.testDisc{
+    width: 250px;
+    height: 200px;
+    background: #006f46;
+    position: absolute; 
+    top: 350px;
+    left: -360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* opacity: 0; */
+    border-radius: 4px;
+}
+
+.testcard{
+    height: 100%;  
+}
+
+.testDetails{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    color: #ffffff;
+}
+
+.testName{
+    padding: 10px 40px;
+    background-color: #eaeaea;
+    color: #2d2d2d;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+
+.testDisc.active{
+    left: 50px;
+    /* transition: all 1s ease-in; */
+    animation: active  1s ease-in ;
+    cursor: pointer;
+}
+
+.testDiscHover{
+    position: absolute;
+    right: -160px;
+    top: 10px;
+    padding: 10px 30px;
+    background: #89a39a;
+    color: #003924;
+    border-radius: 4px;
+    display: none;
+}
+
+.testDiscHover::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    /* background: #003924; */
+    left: -15px;
+    top: 10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid #89a39a;
+}
+
+.testDisc.active:hover .testDiscHover{
+    display: block;
+   animation: indicate .3s ease-out ;
+}
+
+@keyframes indicate {
+    0%{
+        opacity: 0;
+        right: -140px;
+    }100%{
+        opacity: 1;
+        right: -160px;
+    }
+}
+
+@keyframes active {
+
+ 0%{
+   left: 0;
+   opacity: 0;
+ }25%{
+    left: 60px;
+    opacity: 1;
+ }50%{
+    left: 50px;
+    opacity: 1;
+ }75%{
+    left: 60px;
+    opacity: 1;
+ }100%{
+    left: 50px;
+    opacity: 1;
+ }
+
+}
+
+.testDisc.done{
+    left: -350px;
+    opacity: 0;
+    animation: done 1s ease-in ;
+}
+
+@keyframes done {
+
+    0%{
+      left: 50px;
+      opacity: 1;
+    }
+    50%{
+      left: 30px;
+      opacity: 1;
+    }
+    75%{
+        left: 60px;
+        opacity: 1;
+      }
+    100%{
+       left: -360px;
+       opacity: 0;
+    }
+   
+}
+
+@media screen and (max-width:540px) {
+    .card{
+        flex-direction: column;
+        width: 280px;
+        height: 400px;
+        top: -70px;
+    }
+
+    .testDisc {
+        width: 250px;
+        height: 200px;
+        background: #006f46;
+        position: absolute;
+        top: 460px;
+        left: -360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+
+}
