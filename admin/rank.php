@@ -1,8 +1,7 @@
 <?php
 include("../conn.php");
+
 // Create the ranktable if it doesn't exist
-
-
 $createTableSQL = "
 CREATE TABLE IF NOT EXISTS ranktable (
     rollno VARCHAR(100),
@@ -16,6 +15,14 @@ if ($conn->query($createTableSQL) === TRUE) {
     // echo "Table 'ranktable' created successfully<br>";
 } else {
     echo "Error creating table: " . $conn->error . "<br>";
+}
+
+// Truncate the ranktable to remove existing data
+$truncateTableSQL = "TRUNCATE TABLE ranktable";
+if ($conn->query($truncateTableSQL) === TRUE) {
+    // echo "Table 'ranktable' truncated successfully<br>";
+} else {
+    echo "Error truncating table: " . $conn->error . "<br>";
 }
 
 $insertDataSQL = "
@@ -44,6 +51,7 @@ if ($conn->query($insertDataSQL) === TRUE) {
 } else {
     echo "Error inserting data: " . $conn->error . "<br>";
 }
+
 // Close the database connection
 $conn->close();
 ?>
